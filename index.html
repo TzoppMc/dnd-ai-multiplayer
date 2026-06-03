@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DnD AI Multiplayer - Lobby</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lobby.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-brand">🎲 DnD AI Dungeon</div>
+            <div class="nav-menu">
+                <button id="btn-create-room" class="btn btn-primary">Create Room</button>
+                <button id="btn-join-room" class="btn btn-secondary">Join Room</button>
+                <div id="player-info" class="player-badge"></div>
+            </div>
+        </nav>
 
+        <!-- Main Content -->
+        <main class="lobby-container">
+            <!-- Room List -->
+            <section class="rooms-section">
+                <h2>Active Game Rooms</h2>
+                <div id="room-list" class="room-grid"></div>
+            </section>
+
+            <!-- Quick Join -->
+            <section class="quick-join">
+                <div class="join-card">
+                    <h3>Join by Room Code</h3>
+                    <input type="text" id="room-code" placeholder="Enter room code..." maxlength="6">
+                    <button id="btn-quick-join" class="btn btn-primary">Join Game</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Create Room Modal -->
+        <div id="modal-create-room" class="modal hidden">
+            <div class="modal-content">
+                <h2>Create New Game</h2>
+                <form id="form-create-room">
+                    <input type="text" id="room-name" placeholder="Room Name" required>
+                    <select id="max-players">
+                        <option value="4">4 Players</option>
+                        <option value="6">6 Players</option>
+                        <option value="10">10 Players</option>
+                    </select>
+                    <label>
+                        <input type="checkbox" id="ai-dm" checked> AI Dungeon Master
+                    </label>
+                    <button type="submit" class="btn btn-primary">Create Room</button>
+                </form>
+                <button class="modal-close">✕</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
